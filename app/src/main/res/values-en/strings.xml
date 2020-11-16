@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">:)</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nuke">NUKE!</string>
+    <string name="btnAnadir">Add</string>
+    <string name="btnListar">List</string>
+    <string name="btnRemover">Remove</string>
+    <string name="txtTitle">Title</string>
+    <string-array name="Incidencia">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+</resources>

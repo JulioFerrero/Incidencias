@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BlankFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#3F51B5"
+            android:minHeight="60dip"
+            android:text="@string/btnAnadir"
+            android:textColor="@color/white"
+            app:cornerRadius="0dp" />
+
+        <Button
+            android:id="@+id/btnlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#3F51B5"
+            android:minHeight="60dip"
+            android:text="@string/btnListar"
+            android:textColor="@color/white"
+            app:cornerRadius="0dp" />
+
+        <Button
+            android:id="@+id/btnremove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#3F51B5"
+            android:minHeight="60dip"
+            android:text="@string/btnRemover"
+            android:textColor="@color/white"
+            app:cornerRadius="0dp" />
+    </LinearLayout>
+</FrameLayout>

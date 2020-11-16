@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Incidencias</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nuke">NUKE!</string>
+    <string name="btnAnadir">Añadir</string>
+    <string name="btnListar">Listar</string>
+    <string name="btnRemover">Remover</string>
+    <string name="txtTitle">Titulo</string>
+    <string-array name="Incidencia">
+        <item>Baja</item>
+        <item>Media</item>
+        <item>Alta</item>
+    </string-array>
+</resources>

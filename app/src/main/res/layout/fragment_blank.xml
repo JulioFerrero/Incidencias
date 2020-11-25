@@ -21,6 +21,7 @@
             android:minHeight="60dip"
             android:text="@string/btnAnadir"
             android:textColor="@color/white"
+            android:textSize="10sp"
             app:cornerRadius="0dp" />
 
         <Button
@@ -33,6 +34,7 @@
             android:minHeight="60dip"
             android:text="@string/btnListar"
             android:textColor="@color/white"
+            android:textSize="10sp"
             app:cornerRadius="0dp" />
 
         <Button
@@ -45,6 +47,20 @@
             android:minHeight="60dip"
             android:text="@string/btnRemover"
             android:textColor="@color/white"
+            android:textSize="10sp"
             app:cornerRadius="0dp" />
+
+        <Button
+            android:id="@+id/btnPreferences"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="-5dp"
+            android:backgroundTint="#3F51B5"
+            android:minHeight="60dip"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:cornerRadius="0dp"
+            android:text="@string/btnPreferences" />
     </LinearLayout>
 </FrameLayout>

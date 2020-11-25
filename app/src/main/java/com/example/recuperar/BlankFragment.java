@@ -62,6 +62,18 @@ public class BlankFragment extends Fragment {
             }
         });
 
+        final Button btnpreferences = menu.findViewById(R.id.btnPreferences);
+        btnpreferences.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager menuManager = getFragmentManager();
+                FragmentTransaction menuTransaction = menuManager.beginTransaction();
+                Fragment fragmentPreferences = new preferences();
+
+                menuTransaction.replace(R.id.MainFragment, fragmentPreferences);
+                menuTransaction.commit();
+            }
+        });
 
         return menu;
     }

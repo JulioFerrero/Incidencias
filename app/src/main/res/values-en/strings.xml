@@ -6,6 +6,7 @@
     <string name="btnAnadir">Add</string>
     <string name="btnListar">List</string>
     <string name="btnRemover">Remove</string>
+    <string name="btnPreferences">Preferences</string>
     <string name="txtTitle">Title</string>
     <string-array name="Incidencia">
         <item>Low</item>

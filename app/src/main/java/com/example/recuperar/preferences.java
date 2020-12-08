@@ -35,6 +35,7 @@ public class preferences extends Fragment {
         View RootView = inflater.inflate(R.layout.fragment_preferences, container, false);
 
         final Button btn = RootView.findViewById(R.id.button);
+        final Button btn2 = RootView.findViewById(R.id.button2);
 
         Spinner spinner = (Spinner) RootView.findViewById(R.id.spinner2);
         spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) getView());
@@ -61,6 +62,14 @@ public class preferences extends Fragment {
                 //Incidencia in = new Incidencia(titleIncidencia, "Alta");
 
 
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RootView.getContext(), WindowsPreferences.class);
+                startActivity(intent);
             }
         });
 

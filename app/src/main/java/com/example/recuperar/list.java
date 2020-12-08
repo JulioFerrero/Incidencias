@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +39,8 @@ public class list extends Fragment {
         dbHelper = new IncidenciaDBHelper(getActivity().getApplicationContext());
         db = dbHelper.getWritableDatabase();
 
+
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_list, container, false);
     }
@@ -47,18 +51,28 @@ public class list extends Fragment {
         //TextView textView = (TextView) getView().findViewById(R.id.textView);
         //textView.setText(database.returnName());
 
-        ListView listView = (ListView) getView().findViewById(R.id.simpleListView);
+        /*ListView listView = (ListView) getView().findViewById(R.id.simpleListView);
         String[] returnTable = database.returnName();
 
         ArrayAdapter <String> adapter = new ArrayAdapter<String>(getContext(), R.layout.activity_listview, returnTable);
-        listView.setAdapter(adapter);
+        listView.setAdapter(adapter);*/
 
-        if(database.returnName().length == 0){
+        RecyclerView recyclerView = (RecyclerView)getView().findViewById(R.id.RecyclerList);
+        recyclerView.setLayoutManager(new LinearLayoutManager((getView().getContext()),LinearLayoutManager.VERTICAL,false));
+
+
+        //IMPORTANTE
+        AdapaterDatos adapter=new AdapaterDatos(database.returnName());
+        recyclerView.setAdapter(adapter);
+
+        
+        if(database.returnName().size() == 0){
             TextView textView = (TextView) getView().findViewById(R.id.textView);
             textView.setText("ᕕ( ᐛ )ᕗ");
         }
 
     }
+
 
     @Override
     public void onDestroy() {

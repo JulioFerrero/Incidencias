@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import com.example.recuperar.DB.IncidenciaContract.*;
+import com.example.recuperar.DatosVO;
+
+import java.util.ArrayList;
 
 public class IncidenciaDBHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
@@ -43,21 +46,51 @@ public class IncidenciaDBHelper extends SQLiteOpenHelper {
         }
      }
 
-    public String[] returnName() {
+
+   public ArrayList<DatosVO> returnName() {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(IncidenciaEntry.TABLE_NAME, null, null, null, null, null, null);
         cursor.moveToFirst();
-        StringBuilder AllString = new StringBuilder();
+
+       ArrayList<DatosVO> listaDatos = new ArrayList<>();
+
+
+       for (int i = 0; i < cursor.getCount(); i++) {
+           listaDatos.add(new DatosVO(cursor.getString(0), cursor.getString(1), cursor.getString(2)));
+           cursor.moveToNext();
+       }
+       return listaDatos;
+        /*StringBuilder AllString = new StringBuilder();
 
         String[] AllIncidencia = new String[cursor.getCount()];
 
         for (int i = 0; i < cursor.getCount(); i++){
             AllIncidencia[i] = "id: "+ cursor.getString(0) + " | Title: " + cursor.getString(1) + " | Incidencia: " + cursor.getString(2);
             cursor.moveToNext();
+        }*/
+
+        /*ArrayList<ArrayList<String>> AllIncidencia;
+        AllIncidencia = new ArrayList<>();
+
+        for (int i = 0; i < cursor.getCount(); i++){
+            AllIncidencia.add(new ArrayList<>());
+            AllIncidencia.get(i).add(cursor.getString(0));
+            AllIncidencia.get(i).add(cursor.getString(1));
+            AllIncidencia.get(i).add(cursor.getString(2));
+            cursor.moveToNext();
         }
-        return AllIncidencia;
+
+
+        AllIncidencia = new ArrayList<String>();
+
+        for (int i = 0; i < cursor.getCount(); i++){
+            AllIncidencia.add("id: "+ cursor.getString(0) + " | Title: " + cursor.getString(1) + " | Incidencia: " + cursor.getString(2));
+            cursor.moveToNext();
+        }*/
     }
+
+
 
     public void deleteRow(int value)
     {

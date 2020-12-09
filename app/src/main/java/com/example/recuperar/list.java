@@ -24,8 +24,6 @@ public class list extends Fragment {
 
     IncidenciaDBHelper dbHelper;
     SQLiteDatabase db;
-    ListView simpleList;
-
 
 
     public list() {

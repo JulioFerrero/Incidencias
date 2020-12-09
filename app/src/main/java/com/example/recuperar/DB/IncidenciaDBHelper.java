@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class IncidenciaDBHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "incidencies.db";
-    private static final String SQL_CREATE_ENTRIES = "CREATE TABLE " + IncidenciaEntry.TABLE_NAME + "(" + IncidenciaEntry.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + IncidenciaEntry.COLUMN_NAME_TITLE + " TEXT ," + IncidenciaEntry.COLUMN_NAME_TITLE2 + " TEXT)";
+    private static final String SQL_CREATE_ENTRIES = "CREATE TABLE " + IncidenciaEntry.TABLE_NAME + "(" + IncidenciaEntry.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + IncidenciaEntry.ColumnTitle + " TEXT ," + IncidenciaEntry.ColumnInci + " TEXT ," + IncidenciaEntry.ColumnDesc + " TEXT ," + IncidenciaEntry.ColumnEstate + " TEXT ," + IncidenciaEntry.ColumnDate + " DATETIME DEFAULT CURRENT_TIMESTAMP)";
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -30,15 +30,18 @@ public class IncidenciaDBHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    public void insertIncidencia(SQLiteDatabase db, String Contenido, String Contenido2){
+    public void insertIncidencia(SQLiteDatabase db, String getTitle, String getInci, String getDesc,String getEstate,String getDate){
         //Check the bd is open
         if (db.isOpen()){
             //Creation of the register for insert object with the content values
             ContentValues values = new ContentValues();
 
             //Insert the incidence getting all values
-            values.put(IncidenciaEntry.COLUMN_NAME_TITLE, Contenido);
-            values.put(IncidenciaEntry.COLUMN_NAME_TITLE2, Contenido2);
+            values.put(IncidenciaEntry.ColumnTitle, getTitle);
+            values.put(IncidenciaEntry.ColumnInci, getInci);
+            values.put(IncidenciaEntry.ColumnDesc, getDesc);
+            values.put(IncidenciaEntry.ColumnEstate, getEstate);
+            //values.put(IncidenciaEntry.ColumnDate, "now");
 
             db.insert(IncidenciaEntry.TABLE_NAME, null, values);
         }else{
@@ -57,7 +60,7 @@ public class IncidenciaDBHelper extends SQLiteOpenHelper {
 
 
        for (int i = 0; i < cursor.getCount(); i++) {
-           listaDatos.add(new DatosVO(cursor.getString(0), cursor.getString(1), cursor.getString(2)));
+           listaDatos.add(new DatosVO(cursor.getString(0), cursor.getString(1), cursor.getString(2),cursor.getString(3),cursor.getString(4),cursor.getString(5)));
            cursor.moveToNext();
        }
        return listaDatos;

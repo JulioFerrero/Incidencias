@@ -23,6 +23,20 @@
         android:layout_marginBottom="10dp"
         android:layout_height="wrap_content" />
 
+    <EditText
+        android:id="@+id/descrpicion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
+
+    <Spinner
+        android:id="@+id/spinnerEstate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp" />
+
     <Button
         android:id="@+id/btnsave"
         android:layout_width="match_parent"

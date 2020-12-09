@@ -5,15 +5,45 @@ public class DatosVO {
     private String ID;
     private String title;
     private String incidencia;
+    private String descripcion;
+    private String estado;
+    private String fecha;
 
     public DatosVO() {
 
     }
 
-    public DatosVO(String ID, String title, String incidencia) {
+    public DatosVO(String ID, String title, String incidencia,String descripcion,String estado,String fecha) {
         this.ID = ID;
         this.title = title;
         this.incidencia = incidencia;
+        this.descripcion = descripcion;
+        this.estado = estado;
+        this.fecha = fecha;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
     public String getID() {

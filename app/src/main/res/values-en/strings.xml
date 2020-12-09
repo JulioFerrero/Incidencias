@@ -13,4 +13,9 @@
         <item>Medium</item>
         <item>High</item>
     </string-array>
+    <string-array name="Estados">
+        <item>Pending</item>
+        <item>Assigned</item>
+        <item>Accomplished</item>
+    </string-array>
 </resources>

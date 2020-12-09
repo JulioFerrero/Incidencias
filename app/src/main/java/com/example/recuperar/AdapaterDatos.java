@@ -1,6 +1,9 @@
 package com.example.recuperar;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +12,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import java.util.ArrayList;
+
 
 public class AdapaterDatos extends RecyclerView.Adapter <AdapaterDatos.ViewHolderDatos>{
 
@@ -34,6 +39,17 @@ public class AdapaterDatos extends RecyclerView.Adapter <AdapaterDatos.ViewHolde
         holder.EtiID.setText(listDatos.get(position).getID());
         holder.EtiTitulo.setText(listDatos.get(position).getTitle());
         holder.EtiInci.setText(listDatos.get(position).getIncidencia());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                int ID = position;
+                Log.d("TAG", "onClick: "+ID);
+                Intent MoreInfo = new Intent(v.getContext(),AllInfoRecycler.class);
+                MoreInfo.putExtra("holderID", ID);
+                v.getContext().startActivity(MoreInfo);
+            }
+        });
     }
 
     @Override
